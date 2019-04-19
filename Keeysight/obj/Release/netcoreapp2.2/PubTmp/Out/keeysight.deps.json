@@ -22,17 +22,17 @@
   },
   "targets": {
     ".NETCoreApp,Version=v2.2": {
-      "keeysight/1.0.0": {
+      "Keeysight/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.NETCore.App": "2.2.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.2.3"
         },
         "runtime": {
-          "keeysight.dll": {}
+          "Keeysight.dll": {}
         },
         "compile": {
-          "keeysight.dll": {}
+          "Keeysight.dll": {}
         }
       },
       "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
@@ -3533,7 +3533,7 @@
     }
   },
   "libraries": {
-    "keeysight/1.0.0": {
+    "Keeysight/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

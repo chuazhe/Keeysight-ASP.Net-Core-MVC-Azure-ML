@@ -5,7 +5,6 @@ C:\Users\User\source\repos\Keeysight\Keeysight\bin\Debug\netcoreapp2.2\Keeysight
 C:\Users\User\source\repos\Keeysight\Keeysight\bin\Debug\netcoreapp2.2\Keeysight.pdb
 C:\Users\User\source\repos\Keeysight\Keeysight\bin\Debug\netcoreapp2.2\Keeysight.Views.dll
 C:\Users\User\source\repos\Keeysight\Keeysight\bin\Debug\netcoreapp2.2\Keeysight.Views.pdb
-C:\Users\User\source\repos\Keeysight\Keeysight\obj\Debug\netcoreapp2.2\Keeysight.csprojAssemblyReference.cache
 C:\Users\User\source\repos\Keeysight\Keeysight\obj\Debug\netcoreapp2.2\Keeysight.csproj.CoreCompileInputs.cache
 C:\Users\User\source\repos\Keeysight\Keeysight\obj\Debug\netcoreapp2.2\Keeysight.RazorAssemblyInfo.cache
 C:\Users\User\source\repos\Keeysight\Keeysight\obj\Debug\netcoreapp2.2\Keeysight.RazorAssemblyInfo.cs
@@ -28,3 +27,5 @@ C:\Users\User\source\repos\Keeysight\Keeysight\obj\Debug\netcoreapp2.2\Keeysight
 C:\Users\User\source\repos\Keeysight\Keeysight\obj\Debug\netcoreapp2.2\Keeysight.pdb
 C:\Users\User\source\repos\Keeysight\Keeysight\obj\Debug\netcoreapp2.2\Keeysight.csproj.CopyComplete
 C:\Users\User\source\repos\Keeysight\Keeysight\obj\Debug\netcoreapp2.2\Razor\Views\Admin\Index.g.cshtml.cs
+C:\Users\User\source\repos\Keeysight\Keeysight\obj\Debug\netcoreapp2.2\Razor\Views\Admin\Create.g.cshtml.cs
+C:\Users\User\source\repos\Keeysight\Keeysight\obj\Debug\netcoreapp2.2\Razor\Views\Account\Login.g.cshtml.cs
