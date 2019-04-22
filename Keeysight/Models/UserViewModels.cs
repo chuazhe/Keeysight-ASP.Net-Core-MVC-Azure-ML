@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Keeysight.Models
 {
+    //Model Class for Creating Account
     public class CreateModel
     {
         [Required]
@@ -16,6 +17,7 @@ namespace Keeysight.Models
         public string Password { get; set; }
     }
 
+    // Model Class for Authentication
     public class LoginModel
     {
         [Required]

@@ -30,6 +30,8 @@ namespace Keeysight
             services.AddDbContext<AppIdentityDbContext>(options =>
  options.UseSqlServer(
  Configuration["Data:KeeysightIdentity:ConnectionString"]));
+
+            //used the AddIdentity method to set up the Identity services using the built-in classes to represent users and roles.
             services.AddIdentity<AppUser, IdentityRole>()
             .AddEntityFrameworkStores<AppIdentityDbContext>()
             .AddDefaultTokenProviders();
@@ -60,6 +62,8 @@ namespace Keeysight
             }
 
             app.UseHttpsRedirection();
+
+            // Enable static files to be served. This would allow html, images, etc. in wwwroot directory to be served. 
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseAuthentication();

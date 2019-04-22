@@ -11,6 +11,8 @@ namespace Keeysight.Controllers
     {
         private UserManager<AppUser> userManager;
         private SignInManager<AppUser> signInManager;
+
+        //Constructor
         public AccountController(UserManager<AppUser> userMgr,
         SignInManager<AppUser> signinMgr)
         {
@@ -18,13 +20,17 @@ namespace Keeysight.Controllers
             signInManager = signinMgr;
         }
 
+        // allows unauthenticated users to log into the application
         [AllowAnonymous]
+        // Redirect the user to the login page if it is not  authenticated or first time opening it 
         public IActionResult Login(string returnUrl)
         {
             ViewBag.returnUrl = returnUrl;
             return View();
         }
 
+        /*Authorize attribute, which tells MVC that only requests from authenticated
+          users should be processed*/
         [Authorize]
         public async Task<IActionResult> Logout()
         {
@@ -32,28 +38,39 @@ namespace Keeysight.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        //Respond to POST method
         [HttpPost]
+        // allows unauthenticated users to log into the application
         [AllowAnonymous]
+        // works in conjunction with the form element tag helper to protect against cross-site request forgery
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginModel details,
          string returnUrl)
         {
+            // If the input is valid
             if (ModelState.IsValid)
             {
+                //This method locates a user account using the e-mail address that was used to create it.
                 AppUser user = await userManager.FindByEmailAsync(details.Email);
                 if (user != null)
                 {
+                    // await = asynchronous
+                    // SignOutAsync method cancels any existing session that the user has
                     await signInManager.SignOutAsync();
+                    // PasswordSignIn method performs the authentication
                     Microsoft.AspNetCore.Identity.SignInResult result =
                     await signInManager.PasswordSignInAsync(
                     user, details.Password, false, false);
+                    
                     if (result.Succeeded)
                     {
+                        // redirect the user to the returnUrl location if it is true and add a validation error and redisplay the Login view to the user so they can try again.
                         return Redirect(returnUrl ?? "/");
                     }
                 }
+                // If it is invalid
                 ModelState.AddModelError(nameof(LoginModel.Email),
-                "Invalid user or password");
+                "Invalid email or password");
             }
             return View(details);
         }

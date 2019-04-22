@@ -11,7 +11,8 @@ namespace Keeysight.Controllers
 {
     public class HomeController : Controller
     {
-
+        /*Authorize attribute, which tells MVC that only requests from authenticated
+        users should be processed*/
         [Authorize]
         public ViewResult Index() =>
  View(new Dictionary<string, object> { ["Placeholder"] = "Placeholder" });
