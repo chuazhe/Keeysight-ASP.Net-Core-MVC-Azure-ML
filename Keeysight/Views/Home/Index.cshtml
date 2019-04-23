@@ -1,27 +1,26 @@
-﻿
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home - Keeysight</title>
+﻿@{
+    ViewBag.Title = "Home";
 
+}
 
-</head>
-<body>
-    <div class="container">
-        <div class="row">
-            <!--If user is null, identity is null
-                if identity is null, isauthenticated is null
-                if iauthenticated is null, set it to false
-                In default, the statement won't execute if the if is false and vice versa-->
-            @if (User?.Identity?.IsAuthenticated ?? false)
-            {
-                <a asp-controller="Account" asp-action="Logout"
-                   class="btn btn-danger">Logout</a>
-            }
-        </div>
-    </div>
-</body>
-</html>
+<div class="row">
+    <div class="col-md-2 tiles">Box 1</div>
+    <div class="col-md-2 tiles">Title Test</div>
+    <div class="col-md-2 tiles">Title Test</div>
+    <div class="col-md-2 tiles">Title Test</div>
+    <div class="col-md-2 tiles">Title Test</div>
+    <div class="col-md-2 tiles">Title Test</div>
+</div>
+<div class="row">
+    <!--If user is null, identity is null
+    if identity is null, isauthenticated is null
+    if iauthenticated is null, set it to false
+    In default, the statement won't execute if the if is false and vice versa-->
+    @if (User?.Identity?.IsAuthenticated ?? false)
+    {
+        <a asp-controller="Account" asp-action="Logout"
+           class="btn btn-danger" style="margin:20px">Logout</a>
+    }
+</div>
+
 
