@@ -16,20 +16,22 @@
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
     </environment>
     <link rel="stylesheet" href="~/css/site.css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
 </head>
 <body>
     <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
-        <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="bg-dark border-right" id="sidebar-wrapper">
             <div class="sidebar-heading">LOGO</div>
             <div class="list-group list-group-flush">
                 <!--Add Icon-->
-                <a data-alias="Some Alias Here" href="#" class="list-group-item list-group-item-action bg-light active">Home</a>
-                <a data-alias="Some Alias Here" href="#" class="list-group-item list-group-item-action bg-light">Graph & Chart</a>
-                <a data-alias="Some Alias Here" href="#" class="list-group-item list-group-item-action bg-light">Analysis</a>
-                <a data-alias="Some Alias Here" href="#" class="list-group-item list-group-item-action bg-light">Message</a>
-                <a data-alias="Some Alias Here" href="#" class="list-group-item list-group-item-action bg-light">About</a>
-                <a data-alias="Some Alias Here" href="#" class="list-group-item list-group-item-action bg-light">Backup</a>
+                <a data-alias="Some Alias Here" href="#" class="list-group-item list-group-item-action bg-dark active">Home</a>
+                <a data-alias="Some Alias Here" href="#" class="list-group-item list-group-item-action bg-dark">Graph & Chart</a>
+                <a data-alias="Some Alias Here" href="#" class="list-group-item list-group-item-action bg-dark">Analysis</a>
+                <a data-alias="Some Alias Here" href="#" class="list-group-item list-group-item-action bg-dark">Message</a>
+                <a data-alias="Some Alias Here" href="#" class="list-group-item list-group-item-action bg-dark">About</a>
+                <a data-alias="Some Alias Here" href="#" class="list-group-item list-group-item-action bg-dark">Backup</a>
+                <a data-alias="Some Alias Here" asp-controller="Account" asp-action="Logout" class="list-group-item list-group-item-action bg-danger">Logout</a>
             </div>
         </div>
         <!-- /#sidebar-wrapper -->

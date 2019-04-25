@@ -11,16 +11,32 @@
     <div class="col-md-2 tiles">Title Test</div>
     <div class="col-md-2 tiles">Title Test</div>
 </div>
+<!--
 <div class="row">
-    <!--If user is null, identity is null
+    If user is null, identity is null
     if identity is null, isauthenticated is null
     if iauthenticated is null, set it to false
-    In default, the statement won't execute if the if is false and vice versa-->
-    @if (User?.Identity?.IsAuthenticated ?? false)
-    {
-        <a asp-controller="Account" asp-action="Logout"
-           class="btn btn-danger" style="margin:20px">Logout</a>
-    }
-</div>
+    In default, the statement won't execute if the if is false and vice versa
 
+@if (User?.Identity?.IsAuthenticated ?? false)
+{
+    <a asp-controller="Account" asp-action="Logout"
+       class="btn btn-danger" style="margin:20px">Logout</a>
+}
+</div>-->
+<div class="row">
+    <fieldset>
+        <legend style="font-family:Arial Black;color:blue">Two Way DataBinding AngularJS IN MVC 4.5</legend>
+
+        <div ng-app="">
+            My Full Name :
+            <input type="text" ng-model="MyTitle" placeholder="Enter Your Name Here....">
+            <hr />
+            My Name Is 1st Time: <span style="color:blue;background-color: Yellow;color: Blue;font-style: oblique;font-weight: bold">{{MyTitle}}</span>
+            <br />
+            <br />
+            My Name Is 2nd Time: <span style="color:orangered;background-color:yellow;font-style: oblique;font-weight: bold" ng-bind="MyTitle"></span>
+        </div>
+    </fieldset>
+</div>
 

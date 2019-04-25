@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Keeysight.Models;
+using Keeysight.Models;using Microsoft.AspNetCore.Authorization;
 
 namespace Keeysight.Controllers
 {
@@ -21,9 +21,10 @@ namespace Keeysight.Controllers
         }
 
 
+        [Authorize]
         public ViewResult Index() => View(userManager.Users);
 
-
+        //Without Authorize, U can get in anonymously
         public ViewResult Create() => View();
 
         // Respond to POST
