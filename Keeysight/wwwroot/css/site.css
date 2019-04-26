@@ -58,7 +58,7 @@ body {
     line-height: 60px; /* Vertically center the text there */
 }
 
-.login-form.container {
+.container.login-form {
     /*Move to the middle of the screen*/
     position: absolute;
     top: 50%;
@@ -104,10 +104,9 @@ body {
         width: 15rem;
     }
 
-    .list-group-item
-    {
-        color:white;
-    }
+.list-group-item.list-group-item-action.bg-dark {
+    color: white;
+}
 
 #page-content-wrapper {
     min-width: 100vw;

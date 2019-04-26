@@ -31,6 +31,10 @@ namespace Keeysight
  options.UseSqlServer(
  Configuration["Data:KeeysightIdentity:ConnectionString"]));
 
+            services.AddDbContext<TestTableContext>(options =>
+options.UseSqlServer(
+Configuration["Data:KeeysightIdentity:ConnectionString"]));
+
             //used the AddIdentity method to set up the Identity services using the built-in classes to represent users and roles.
             services.AddIdentity<AppUser, IdentityRole>()
             .AddEntityFrameworkStores<AppIdentityDbContext>()

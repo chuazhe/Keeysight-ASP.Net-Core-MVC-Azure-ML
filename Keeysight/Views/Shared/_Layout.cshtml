@@ -25,9 +25,9 @@
             <div class="sidebar-heading">LOGO</div>
             <div class="list-group list-group-flush">
                 <!--Add Icon-->
-                <a data-alias="Some Alias Here" href="#" class="list-group-item list-group-item-action bg-dark active">Home</a>
-                <a data-alias="Some Alias Here" href="#" class="list-group-item list-group-item-action bg-dark">Graph & Chart</a>
-                <a data-alias="Some Alias Here" href="#" class="list-group-item list-group-item-action bg-dark">Analysis</a>
+                <a data-alias="Some Alias Here" href="Home" class="list-group-item list-group-item-action bg-dark">Home</a>
+                <a data-alias="Some Alias Here" href="Admin" class="list-group-item list-group-item-action bg-dark">Graph & Chart</a>
+                <a data-alias="Some Alias Here" href="Account" class="list-group-item list-group-item-action bg-dark">Analysis</a>
                 <a data-alias="Some Alias Here" href="#" class="list-group-item list-group-item-action bg-dark">Message</a>
                 <a data-alias="Some Alias Here" href="#" class="list-group-item list-group-item-action bg-dark">About</a>
                 <a data-alias="Some Alias Here" href="#" class="list-group-item list-group-item-action bg-dark">Backup</a>
@@ -42,7 +42,7 @@
             </nav>
             <div class="container-fluid">
                 <div class="mt-4">
-                    <h1 class="mt-4">Test</h1>
+                    <h1 class="mt-4">@ViewBag.Header</h1>
                     <!-- Create a partial view to prompt the user to accept the cookies and privacy concern
     <partial name="_CookieConsentPartial" />-->
                         @RenderBody()

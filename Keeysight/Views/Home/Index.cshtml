@@ -1,8 +1,22 @@
-﻿@{
+﻿@model IEnumerable<TestTable>
+@{
     ViewBag.Title = "Home";
+    ViewBag.Header = "Home";
 
 }
 
+<div class="row">
+    <div class="card" style="width: 18rem;">
+        <div class="card-header">
+           Announcement
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">dadao</li>
+            <li class="list-group-item">dsadad</li>
+            <li class="list-group-item">Vdsadaos</li>
+        </ul>
+    </div>
+</div>
 <div class="row">
     <div class="col-md-2 tiles">Box 1</div>
     <div class="col-md-2 tiles">Title Test</div>
@@ -38,5 +52,16 @@
             My Name Is 2nd Time: <span style="color:orangered;background-color:yellow;font-style: oblique;font-weight: bold" ng-bind="MyTitle"></span>
         </div>
     </fieldset>
+</div>
+<div class="=row" style="margin:20px">
+    <div>
+        @foreach(var a in Model)
+        {
+            <ul>
+                <li>Id: @a.Id (From Server)</li>
+                <li>Name: @a.Name (From Server)</li>
+            </ul>
+        }
+    </div>
 </div>
 
