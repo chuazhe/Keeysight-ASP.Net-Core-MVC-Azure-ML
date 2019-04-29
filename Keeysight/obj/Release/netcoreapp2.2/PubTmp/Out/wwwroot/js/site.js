@@ -1,4 +1,17 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿/*Menu Toggle Script*/
+$("#menu-toggle").click(function (e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
 
-// Write your JavaScript code.
+/* Menu Click Script*/
+$('.list-group-item').on('click', function () {
+    var $this = $(this);
+    //var $alias = $this.data('alias');
+
+    $('.active').removeClass('active');
+    $this.toggleClass('active')
+
+    // Pass clicked link element to another function
+    //myfunction($this, $alias)
+})
