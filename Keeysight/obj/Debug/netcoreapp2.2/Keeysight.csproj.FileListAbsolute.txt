@@ -30,3 +30,4 @@ C:\Users\User\source\repos\Keeysight\Keeysight\obj\Debug\netcoreapp2.2\Razor\Vie
 C:\Users\User\source\repos\Keeysight\Keeysight\obj\Debug\netcoreapp2.2\Razor\Views\Admin\Create.g.cshtml.cs
 C:\Users\User\source\repos\Keeysight\Keeysight\obj\Debug\netcoreapp2.2\Razor\Views\Account\Login.g.cshtml.cs
 C:\Users\User\source\repos\Keeysight\Keeysight\obj\Debug\netcoreapp2.2\Keeysight.csprojAssemblyReference.cache
+C:\Users\User\source\repos\Keeysight\Keeysight\obj\Debug\netcoreapp2.2\Razor\Views\GraphNChart\Index.g.cshtml.cs

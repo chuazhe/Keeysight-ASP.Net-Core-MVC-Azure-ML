@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Graph & Chart";
+}
+
+@RenderSection("Chart", required: true);
+
+<h1>Index</h1>
+<div class="row">
+    <div class="col-6">
+        <canvas id="myChart"></canvas>
+    </div>
+    <div class="col-6">
+        <canvas id="myChart2"></canvas>
+    </div>
+
+</div>
+
+<!--Chart 1-->
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line',
+
+        // The data for our dataset
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+                label: 'My First dataset',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [0, 10, 5, 2, 20, 30, 45]
+            }]
+        },
+
+        // Configuration options go here
+        options: {}
+    });
+</script>
+
+<!--Chart 2-->
+<script>
+    var ctx = document.getElementById('myChart2').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line',
+
+        // The data for our dataset
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+                label: 'My First dataset',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [0, 10, 5, 2, 20, 30, 45]
+            }]
+        },
+
+        // Configuration options go here
+        options: {}
+    });
+</script>

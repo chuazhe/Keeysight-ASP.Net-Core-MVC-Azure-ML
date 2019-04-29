@@ -4,7 +4,8 @@ $("#menu-toggle").click(function (e) {
     $("#wrapper").toggleClass("toggled");
 });
 
-/* Menu Click Script*/
+/*
+/* Menu Click Script
 $('.list-group-item').on('click', function () {
     var $this = $(this);
     //var $alias = $this.data('alias');
@@ -14,4 +15,4 @@ $('.list-group-item').on('click', function () {
 
     // Pass clicked link element to another function
     //myfunction($this, $alias)
-})
+})*/
