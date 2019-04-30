@@ -1,16 +1,15 @@
 ﻿@model IEnumerable<TestTable>
 @{
     ViewBag.Title = "Home";
-    ViewBag.Header = "Home";
+    ViewBag.Header = "Home Header";
 
 }
-
 
 
 <div class="row">
     <div class="card" style="width: 18rem;">
         <div class="card-header">
-           Announcement
+            Announcement
         </div>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">dadao</li>
@@ -57,13 +56,17 @@
 </div>
 <div class="=row" style="margin:20px">
     <div>
-        @foreach(var a in Model)
+        @foreach (var a in Model)
         {
             <ul>
                 <li>Id: @a.Id (From Server)</li>
                 <li>Name: @a.Name (From Server)</li>
             </ul>
         }
+    </div>
+</div>
+<div class="=row" style="margin:20px">
+    <div>
     </div>
 </div>
 

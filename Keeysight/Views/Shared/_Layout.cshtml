@@ -17,6 +17,31 @@
     </environment>
     <link rel="stylesheet" href="~/css/site.css" />
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <!-- /#wrapper -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
+        </script>
+    </environment>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <!--Do not render section Chart in Graph&Chart Index.cshtml-->
+    @RenderSection("Chart", required: false)
 </head>
 <body>
     <div class="d-flex" id="wrapper">
@@ -28,7 +53,7 @@
                 <a data-alias="Some Alias Here" href="Home" class="list-group-item list-group-item-action bg-dark">Home</a>
                 <a data-alias="Some Alias Here" href="GraphNChart" class="list-group-item list-group-item-action bg-dark">Graph & Chart</a>
                 <a data-alias="Some Alias Here" href="#" class="list-group-item list-group-item-action bg-dark">Analysis</a>
-                <a data-alias="Some Alias Here" href="#" class="list-group-item list-group-item-action bg-dark">Message</a>
+                <a data-alias="Some Alias Here" href="Message" class="list-group-item list-group-item-action bg-dark">Message</a>
                 <a data-alias="Some Alias Here" href="#" class="list-group-item list-group-item-action bg-dark">About</a>
                 <a data-alias="Some Alias Here" href="#" class="list-group-item list-group-item-action bg-dark">Backup</a>
                 <a data-alias="Some Alias Here" asp-controller="Account" asp-action="Logout" class="list-group-item list-group-item-action bg-danger" style="color:white">Logout</a>
@@ -46,12 +71,7 @@
                     <h1 class="mt-4">@ViewBag.Header</h1>
                     <!-- Create a partial view to prompt the user to accept the cookies and privacy concern
                     <partial name="_CookieConsentPartial" />-->
-                    @section Chart{
-                        <!--ChartJs Core Javascript and CSS -->
-                        <script src="~/lib/chartjs/dist/Chart.bundle.min.js"></script>
-                        <link rel="stylesheet" href="~/lib/chartjs/dist/Chart.min.css" />
-                    }
-                    @RenderSection("Chart", required: false)
+
                     @RenderBody()
                 </div>
             </div>

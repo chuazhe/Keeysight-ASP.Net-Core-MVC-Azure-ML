@@ -1,8 +1,11 @@
 ﻿@{
     ViewData["Title"] = "Graph & Chart";
 }
-
-@RenderSection("Chart", required: true);
+@section Chart{
+    <!--ChartJs Core Javascript and CSS -->
+    <script src="~/lib/chartjs/dist/Chart.bundle.min.js"></script>
+    <link rel="stylesheet" href="~/lib/chartjs/dist/Chart.min.css" />
+}
 
 <h1>Index</h1>
 <div class="row">

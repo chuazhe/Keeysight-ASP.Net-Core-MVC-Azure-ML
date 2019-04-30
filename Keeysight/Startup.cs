@@ -12,6 +12,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Keeysight.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using Keeysight.Hubs;
+
 
 namespace Keeysight
 {
@@ -49,6 +51,10 @@ Configuration["Data:KeeysightIdentity:ConnectionString"]));
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMemoryCache();
+            services.AddSession();
+            services.AddSignalR();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -70,12 +76,17 @@ Configuration["Data:KeeysightIdentity:ConnectionString"]));
             // Enable static files to be served. This would allow html, images, etc. in wwwroot directory to be served. 
             app.UseStaticFiles();
             app.UseCookiePolicy();
-            app.UseAuthentication();
+            app.UseAuthentication();            app.UseSession();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+            });
+
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<ChatHub>("/chatHub");
             });
         }
     }
