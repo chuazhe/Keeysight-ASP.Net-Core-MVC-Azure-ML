@@ -122,9 +122,6 @@ body {
         margin-left: 0;
     }
 
-    #nvbar_mobile {
-        display: none;
-    }
 
     #page-content-wrapper {
         min-width: 0;
@@ -136,12 +133,13 @@ body {
     }
 }
 
-/*When less than 768px*/
+/*When less than 768px
 @media (max-width: 768px) {
     #nvbar_mobile {
         display: block;
     }
 }
+    */
 
 .active {
     color: deepskyblue !important;

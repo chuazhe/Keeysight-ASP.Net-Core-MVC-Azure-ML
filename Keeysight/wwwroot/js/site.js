@@ -2,6 +2,14 @@
 $("#menu-toggle").click(function (e) {
     e.preventDefault();
     $("#wrapper").toggleClass("toggled");
+
+    //Not working
+    if ($(this).find($(".fa")).hasClass('fa-arrow-left')) {
+        console.log("test");
+        }
+
+   
+
 });
 
 /*

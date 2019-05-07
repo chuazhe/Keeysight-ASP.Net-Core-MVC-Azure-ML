@@ -27,7 +27,6 @@ namespace Keeysight.Controllers
         }
 
 
-
         /*Authorize attribute, which tells MVC that only requests from authenticated
         users should be processed*/
         [Authorize]
@@ -43,6 +42,8 @@ namespace Keeysight.Controllers
 
         //Custom Route, by assigning route, going to home/Index2 will go to Error.cshtml
         //[Route("home/Index2")]
+        /*Allow unauthorised user to access this view*/
+        [AllowAnonymous]
         public ViewResult Error() => View();
     }
 
