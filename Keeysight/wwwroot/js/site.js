@@ -3,14 +3,16 @@ $("#menu-toggle").click(function (e) {
     e.preventDefault();
     $("#wrapper").toggleClass("toggled");
 
-    //Not working
-    if ($(this).find($(".fa")).hasClass('fa-arrow-left')) {
-        console.log("test");
-        }
+    var icon = $(this).find("svg");
 
-   
+    if(icon.hasClass("fa-arrow-left")){
+        icon.addClass("fa-bars").removeClass("fa-arrow-left");
+    }else {
+        icon.addClass("fa-arrow-left").removeClass("fa-bars");
+    }
 
 });
+
 
 /*
 /* Menu Click Script

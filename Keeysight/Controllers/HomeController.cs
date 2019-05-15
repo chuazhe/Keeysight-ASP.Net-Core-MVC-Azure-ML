@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Keeysight.Models;
+﻿using Keeysight.Models;
 using Microsoft.AspNetCore.Authorization;
-using System.Data.SqlClient;
-using System.Text;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace Keeysight.Controllers
 {

@@ -24,7 +24,7 @@ html {
 }
 
 .border-bottom {
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 4px solid #2b3035 !important;
 }
 
 .box-shadow {
@@ -149,4 +149,9 @@ body {
     margin: 10px;
     height: 100px;
     background: #BFBFBF;
+}
+
+#nvbar_mobile {
+    background-color: #2b3035;
+    border:5px;
 }
