@@ -13,6 +13,11 @@ $("#menu-toggle").click(function (e) {
 
 });
 
+function test(ob1)
+{
+    console.log(ob1);
+}
+
 
 /*
 /* Menu Click Script

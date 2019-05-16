@@ -118,6 +118,7 @@ body {
 
 /*When more than 768px*/
 @media (min-width: 768px) {
+   
     #sidebar-wrapper {
         margin-left: 0;
     }
@@ -128,6 +129,7 @@ body {
         width: 100%;
     }
 
+    /*sidebar*/
     #wrapper.toggled #sidebar-wrapper {
         margin-left: -15rem;
     }
@@ -154,4 +156,10 @@ body {
 #nvbar_mobile {
     background-color: #2b3035;
     border:5px;
+}
+
+
+.navbar_text {
+    margin-left: 20px !important;
+    font-size: 1.2rem;
 }

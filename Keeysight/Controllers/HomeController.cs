@@ -11,8 +11,7 @@ namespace Keeysight.Controllers
     public class HomeController : Controller
     {
 
-        const string SessionName = "_Name";
-        const string SessionAge = "_Age";
+
 
         private readonly TestTableContext _context;
         public HomeController(TestTableContext context)
@@ -26,9 +25,7 @@ namespace Keeysight.Controllers
         [Authorize]
         public ViewResult Index()
         {
-            HttpContext.Session.SetString(SessionName, "Jarvik");
-            HttpContext.Session.SetInt32(SessionAge, 24);
-            // ViewBag.Message = HttpContext.Session.GetString("SessionName");
+
             var query = _context.TestTable.Where(e => e.Name == "Chua").ToList();
             return View(query);
 
