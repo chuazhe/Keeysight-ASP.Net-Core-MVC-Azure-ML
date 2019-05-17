@@ -19,20 +19,22 @@ namespace Keeysight
 {
     public class Startup
     {
+        //This Startup and IConfiguration will help you to read the appsettings.json file in the Startup.cs class.
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
-
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Add DbContext as a service
             services.AddDbContext<AppIdentityDbContext>(options =>
  options.UseSqlServer(
  Configuration["Data:KeeysightIdentity:ConnectionString"]));
 
+            //Add DbContext as a service
             services.AddDbContext<TestTableContext>(options =>
 options.UseSqlServer(
 Configuration["Data:KeeysightIdentity:ConnectionString"]));
@@ -48,7 +50,6 @@ Configuration["Data:KeeysightIdentity:ConnectionString"]));
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddMemoryCache();

@@ -2,7 +2,22 @@
 $("#menu-toggle").click(function (e) {
     e.preventDefault();
     $("#wrapper").toggleClass("toggled");
+
+    var icon = $(this).find("svg");
+
+    if(icon.hasClass("fa-arrow-left")){
+        icon.addClass("fa-bars").removeClass("fa-arrow-left");
+    }else {
+        icon.addClass("fa-arrow-left").removeClass("fa-bars");
+    }
+
 });
+
+function test(ob1)
+{
+    console.log(ob1);
+}
+
 
 /*
 /* Menu Click Script

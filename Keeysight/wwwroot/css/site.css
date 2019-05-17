@@ -24,7 +24,7 @@ html {
 }
 
 .border-bottom {
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 4px solid #2b3035 !important;
 }
 
 .box-shadow {
@@ -118,30 +118,30 @@ body {
 
 /*When more than 768px*/
 @media (min-width: 768px) {
+   
     #sidebar-wrapper {
         margin-left: 0;
     }
 
-    #nvbar_mobile {
-        display: none;
-    }
 
     #page-content-wrapper {
         min-width: 0;
         width: 100%;
     }
 
+    /*sidebar*/
     #wrapper.toggled #sidebar-wrapper {
         margin-left: -15rem;
     }
 }
 
-/*When less than 768px*/
+/*When less than 768px
 @media (max-width: 768px) {
     #nvbar_mobile {
         display: block;
     }
 }
+    */
 
 .active {
     color: deepskyblue !important;
@@ -151,4 +151,15 @@ body {
     margin: 10px;
     height: 100px;
     background: #BFBFBF;
+}
+
+#nvbar_mobile {
+    background-color: #2b3035;
+    border:5px;
+}
+
+
+.navbar_text {
+    margin-left: 20px !important;
+    font-size: 1.2rem;
 }

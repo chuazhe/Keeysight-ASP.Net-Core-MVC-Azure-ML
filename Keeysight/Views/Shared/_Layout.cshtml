@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http
+@{
+    var x = Context.Session.GetString("SessionEmail");
+}
+
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -40,30 +46,83 @@
         </script>
     </environment>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+
+            test("@(ViewContext.RouteData.Values["Controller"])");
+
+            /*
+            //Get the value of controller
+            if ("@(ViewContext.RouteData.Values["Controller"])" == "Home")
+            {
+                console.log("yes");
+            }
+            */
+            //Get the value of Action for the controller
+            /*
+            console.log("@(ViewContext.RouteData.Values["Action"])");
+            */
+        });
+    </script>
     <!--Do not render section Chart in Graph&Chart Index.cshtml-->
     @RenderSection("Chart", required: false)
 </head>
 <body>
+
     <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
-        <div class="bg-dark border-right" id="sidebar-wrapper">
-            <div class="sidebar-heading">LOGO</div>
+        <div class="bg-dark border-right border-dark" id="sidebar-wrapper">
+            <div class="sidebar-heading">Keeysight</div>
             <div class="list-group list-group-flush">
-                <!--Add Icon-->
-                <a data-alias="Some Alias Here" href="Home" class="list-group-item list-group-item-action bg-dark">Home</a>
-                <a data-alias="Some Alias Here" href="GraphNChart" class="list-group-item list-group-item-action bg-dark">Graph & Chart</a>
+                <!--To do: Add Icon-->
+                <a id="Home" href="Home" class="list-group-item list-group-item-action bg-dark">Home</a>
+                <a id="GraphNChart" href="GraphNChart" class="list-group-item list-group-item-action bg-dark">Graph & Chart</a>
                 <a data-alias="Some Alias Here" href="#" class="list-group-item list-group-item-action bg-dark">Analysis</a>
-                <a data-alias="Some Alias Here" href="Message" class="list-group-item list-group-item-action bg-dark">Message</a>
+                <a id="Message" href="Message" class="list-group-item list-group-item-action bg-dark">Message</a>
                 <a data-alias="Some Alias Here" href="#" class="list-group-item list-group-item-action bg-dark">About</a>
                 <a data-alias="Some Alias Here" href="#" class="list-group-item list-group-item-action bg-dark">Backup</a>
-                <a data-alias="Some Alias Here" asp-controller="Account" asp-action="Logout" class="list-group-item list-group-item-action bg-danger" style="color:white">Logout</a>
+                <a data-alias="Some Alias Here" href="#" class="list-group-item list-group-item-action bg-dark">@x</a>
             </div>
         </div>
         <!-- /#sidebar-wrapper -->
         <!-- Page Content -->
         <div id="page-content-wrapper">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom" id="nvbar_mobile">
-                <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
+            <nav class="navbar navbar-expand-lg navbar-dark border-bottom" id="nvbar_mobile">
+                <!-- Still not mobile friendly http://howbigismybrowser.com/ 995x736-->
+                <div class="navbar-nav mr-auto">
+                    <button class="btn btn-primary" id="menu-toggle"><i id="icon-toggle" class="fa fa-arrow-left"></i></button>
+                </div>
+                <!--<span class="navbar-brand navbar_text">@ViewData["Title"]</span>-->
+                <div class="navbar-nav ml-auto">
+                    <span class="navbar-brand navbar_text">@x</span>
+                </div>
+                <!--if u want to use MVC tag helper, must use <a>...</a> attribute-->
+                <a class="btn btn-danger" asp-controller="Account" asp-action="Logout">Logout</a>
+
+                <!--
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                    -->
             </nav>
             <div class="container-fluid">
                 <!-- mt= margin top in bootstrap-->
@@ -102,6 +161,5 @@
         </script>
     </environment>
     <script src="~/js/site.js" asp-append-version="true"></script>
-
 </body>
 </html>

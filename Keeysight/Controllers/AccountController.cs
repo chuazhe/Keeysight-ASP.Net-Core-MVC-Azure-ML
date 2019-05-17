@@ -2,13 +2,18 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Keeysight.Models;
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity;using Microsoft.AspNetCore.Http;
 
 namespace Keeysight.Controllers
 {
+
+
+
     [Authorize]
     public class AccountController : Controller
     {
+
+
         private UserManager<AppUser> userManager;
         private SignInManager<AppUser> signInManager;
 
@@ -64,6 +69,8 @@ namespace Keeysight.Controllers
                     
                     if (result.Succeeded)
                     {
+                        //If login success, store the email to the session variable
+                        HttpContext.Session.SetString("SessionEmail", details.Email);           
                         // redirect the user to the returnUrl location if it is true and if it is false, add a validation error and redisplay the Login view to the user so they can try again.
                         return Redirect(returnUrl ?? "/");
                     }
