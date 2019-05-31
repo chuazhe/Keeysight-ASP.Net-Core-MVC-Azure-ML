@@ -47,22 +47,34 @@
     </environment>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
+
+    <!--
     <script>
         $(document).ready(function () {
+            //SetActiveClass("@(ViewContext.RouteData.Values["Controller"])");
 
-            test("@(ViewContext.RouteData.Values["Controller"])");
-
-            /*
             //Get the value of controller
             if ("@(ViewContext.RouteData.Values["Controller"])" == "Home")
             {
                 console.log("yes");
             }
-            */
+
             //Get the value of Action for the controller
-            /*
             console.log("@(ViewContext.RouteData.Values["Action"])");
             */
+        });
+    </script>
+        -->
+
+    <script>
+            //will only run once the page Document Object Model (DOM) is ready for JavaScript code to execute.
+            $(document).ready(function () {
+
+            // Remove the class active from id navigator and class list-group-item list-group-item-action bg-dark
+             $("#navigator").find("a.list-group-item list-group-item-action bg-dark").removeClass("active");
+            // Add active class accordingly to the controller
+            $('#@(ViewContext.RouteData.Values["Controller"])').addClass('active');
+
         });
     </script>
     <!--Do not render section Chart in Graph&Chart Index.cshtml-->
@@ -74,12 +86,12 @@
         <!-- Sidebar -->
         <div class="bg-dark border-right border-dark" id="sidebar-wrapper">
             <div class="sidebar-heading">Keeysight</div>
-            <div class="list-group list-group-flush">
+            <div id="navigator" class="list-group list-group-flush">
                 <!--To do: Add Icon-->
                 <a id="Home" href="Home" class="list-group-item list-group-item-action bg-dark">Home</a>
                 <a id="GraphNChart" href="GraphNChart" class="list-group-item list-group-item-action bg-dark">Graph & Chart</a>
                 <a data-alias="Some Alias Here" href="#" class="list-group-item list-group-item-action bg-dark">Analysis</a>
-                <a id="Message" href="Message" class="list-group-item list-group-item-action bg-dark">Message</a>
+                <a id="Message" href="Message" class="list-group-item list-group-item-action bg-dark )">Message</a>
                 <a data-alias="Some Alias Here" href="#" class="list-group-item list-group-item-action bg-dark">About</a>
                 <a data-alias="Some Alias Here" href="#" class="list-group-item list-group-item-action bg-dark">Backup</a>
                 <a data-alias="Some Alias Here" href="#" class="list-group-item list-group-item-action bg-dark">@x</a>
@@ -91,7 +103,7 @@
             <nav class="navbar navbar-expand-lg navbar-dark border-bottom" id="nvbar_mobile">
                 <!-- Still not mobile friendly http://howbigismybrowser.com/ 995x736-->
                 <div class="navbar-nav mr-auto">
-                    <button class="btn btn-primary" id="menu-toggle"><i id="icon-toggle" class="fa fa-arrow-left"></i></button>
+                    <button class="btn btn-primary" id="menu-toggle"><i id="icon-toggle" class="fa fa-bars"></i></button>
                 </div>
                 <!--<span class="navbar-brand navbar_text">@ViewData["Title"]</span>-->
                 <div class="navbar-nav ml-auto">
@@ -133,33 +145,34 @@
 
                     @RenderBody()
                 </div>
-            </div>
-        </div>
-        <!-- /#page-content-wrapper -->
 
+            </div>
+            <!-- /#page-content-wrapper -->
+
+        </div>
+        <!-- /#wrapper -->
+        <!-- Bootstrap core JavaScript -->
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <environment include="Development">
+            <script src="~/lib/jquery/dist/jquery.js"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+        </environment>
+        <environment exclude="Development">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+                    asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                    asp-fallback-test="window.jQuery"
+                    crossorigin="anonymous"
+                    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
+            </script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+                    asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+                    asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                    crossorigin="anonymous"
+                    integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
+            </script>
+        </environment>
+        <script src="~/js/site.js" asp-append-version="true"></script>
     </div>
-    <!-- /#wrapper -->
-    <!-- Bootstrap core JavaScript -->
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
-        </script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                crossorigin="anonymous"
-                integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
-        </script>
-    </environment>
-    <script src="~/js/site.js" asp-append-version="true"></script>
 </body>
 </html>

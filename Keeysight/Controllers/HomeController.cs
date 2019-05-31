@@ -11,8 +11,7 @@ namespace Keeysight.Controllers
     public class HomeController : Controller
     {
 
-
-
+        //Dependency Injection
         private readonly TestTableContext _context;
         public HomeController(TestTableContext context)
         {
@@ -20,15 +19,29 @@ namespace Keeysight.Controllers
         }
 
 
+
         /*Authorize attribute, which tells MVC that only requests from authenticated
         users should be processed*/
         [Authorize]
         public ViewResult Index()
         {
+            //Search for e.Name == Chua
+            //var query = _context.TestTable.Where(e => e.Name == "Chua").ToList();
 
-            var query = _context.TestTable.Where(e => e.Name == "Chua").ToList();
+            var query = _context.TestTable.ToList();
             return View(query);
 
+
+            //OnConfiguring
+            /* 
+            using (var context = new TestTableContext())
+            {
+                var query = context.TestTable.ToList();
+                return View(query);
+            }
+            */
+           
+        
         }
 
         //Custom Route, by assigning route, going to home/Index2 will go to Error.cshtml

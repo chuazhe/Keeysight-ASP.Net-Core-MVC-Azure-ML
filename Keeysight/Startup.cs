@@ -29,12 +29,14 @@ namespace Keeysight
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //Add DbContext as a service
+            //Add AppIdentityContext as a service
+            //Dependency Injection
             services.AddDbContext<AppIdentityDbContext>(options =>
  options.UseSqlServer(
  Configuration["Data:KeeysightIdentity:ConnectionString"]));
 
-            //Add DbContext as a service
+            //Add TestTableContext as a service
+            //Dependency Injection
             services.AddDbContext<TestTableContext>(options =>
 options.UseSqlServer(
 Configuration["Data:KeeysightIdentity:ConnectionString"]));

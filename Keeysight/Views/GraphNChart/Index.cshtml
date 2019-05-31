@@ -1,4 +1,6 @@
-﻿@{
+﻿@model TestTable
+
+@{
     ViewData["Title"] = "Graph & Chart";
 }
 @section Chart{
@@ -16,6 +18,55 @@
         <canvas id="myChart2"></canvas>
     </div>
 
+</div>
+<div class="row">
+    <div class="container">
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <form asp-action="Add" method="post">
+            <div class="form-group">
+                <label asp-for="Id"></label>
+                <input asp-for="Id" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <form asp-action="Update" method="post">
+            <div class="form-group">
+                <label asp-for="Id"></label>
+                <input asp-for="Id" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <form asp-action="Delete" method="post">
+            <div class="form-group">
+                <label asp-for="Id"></label>
+                <input asp-for="Id" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-primary">Delete</button>
+        </form>
+    </div>
 </div>
 
 <!--Chart 1-->
@@ -39,6 +90,8 @@
         // Configuration options go here
         options: {}
     });
+
+    $(document).ready(function () { console.log("graph and chart loh"); });
 </script>
 
 <!--Chart 2-->
