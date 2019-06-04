@@ -1,29 +1,28 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 
-//do all the communications with the database. 
 namespace Keeysight.Models
 {
-    public class TestTableContext : DbContext
+    public class MessagesContext : DbContext
     {
         //For OnConfiguring
-        public TestTableContext()
+        public MessagesContext()
         {
         }
 
         //Initiliase the context with the connection string in appsettings.json (RMB to put the configure the service 1st in Starup.cs!)
-        public TestTableContext(DbContextOptions<TestTableContext> options) : base(options)
+        public MessagesContext(DbContextOptions<MessagesContext> options) : base(options)
         { }
 
         //The object for the context
-        public DbSet<TestTable> TestTable { get; set; }
+        public DbSet<Messages> Messages { get; set; }
 
 
-        //If u want to use (var context= new TestTableContext()) which it doesn't have to initialise the context to perform query to the database, u will have to provide the connection string inside it
+        //If u want to use (var context= new MessagesContext()) which it doesn't have to initialise the context to perform query to the database, u will have to provide the connection string inside it
         //don't put this file in public repository if developing in real life situation
         //may cause security issues
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

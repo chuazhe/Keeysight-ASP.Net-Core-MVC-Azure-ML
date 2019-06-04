@@ -2,7 +2,9 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Linq;
+using System.Security.Claims;
 
 namespace Keeysight.Controllers
 {
@@ -27,6 +29,20 @@ namespace Keeysight.Controllers
         {
             //Search for e.Name == Chua
             //var query = _context.TestTable.Where(e => e.Name == "Chua").ToList();
+            //dd/mm/yyyy 
+            //4/6/2019 4:07:34 PM
+            //Console.WriteLine(System.DateTime.Now);
+
+
+            /*
+            Ger UserId, UserName, UserEmail
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier).Value; // will give the user's userId
+            var userName = User.FindFirst(ClaimTypes.Name).Value; // will give the user's userName
+            //var userEmail = User.FindFirst(ClaimTypes.Email).Value; // will give the user's Email
+            Console.Write(userId);
+            Console.Write(userName);
+            //Console.Write(userEmail);
+            */
 
             var query = _context.TestTable.ToList();
             return View(query);

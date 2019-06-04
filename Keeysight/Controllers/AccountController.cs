@@ -6,9 +6,6 @@ using Microsoft.AspNetCore.Identity;using Microsoft.AspNetCore.Http;
 
 namespace Keeysight.Controllers
 {
-
-
-
     [Authorize]
     public class AccountController : Controller
     {

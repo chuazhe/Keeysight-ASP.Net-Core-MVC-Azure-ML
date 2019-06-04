@@ -41,6 +41,12 @@ namespace Keeysight
 options.UseSqlServer(
 Configuration["Data:KeeysightIdentity:ConnectionString"]));
 
+            //Add MessagesContext as a service
+            //Dependency Injection
+            services.AddDbContext<MessagesContext>(options =>
+options.UseSqlServer(
+Configuration["Data:KeeysightIdentity:ConnectionString"]));
+
             //used the AddIdentity method to set up the Identity services using the built-in classes to represent users and roles.
             services.AddIdentity<AppUser, IdentityRole>()
             .AddEntityFrameworkStores<AppIdentityDbContext>()
@@ -56,7 +62,12 @@ Configuration["Data:KeeysightIdentity:ConnectionString"]));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddMemoryCache();
             services.AddSession();
+
+            //Dependency Injection with a call to Add signalR
             services.AddSignalR();
+
+            //Add Current User 
+            services.AddHttpContextAccessor();
 
         }
 
@@ -87,6 +98,7 @@ Configuration["Data:KeeysightIdentity:ConnectionString"]));
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
+            // Add SignalR to the middleware pipeline, while setting up the necessary routes
             app.UseSignalR(routes =>
             {
                 routes.MapHub<ChatHub>("/chatHub");
