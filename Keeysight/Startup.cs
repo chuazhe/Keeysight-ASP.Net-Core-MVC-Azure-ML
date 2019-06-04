@@ -29,13 +29,21 @@ namespace Keeysight
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //Add DbContext as a service
+            //Add AppIdentityContext as a service
+            //Dependency Injection
             services.AddDbContext<AppIdentityDbContext>(options =>
  options.UseSqlServer(
  Configuration["Data:KeeysightIdentity:ConnectionString"]));
 
-            //Add DbContext as a service
+            //Add TestTableContext as a service
+            //Dependency Injection
             services.AddDbContext<TestTableContext>(options =>
+options.UseSqlServer(
+Configuration["Data:KeeysightIdentity:ConnectionString"]));
+
+            //Add MessagesContext as a service
+            //Dependency Injection
+            services.AddDbContext<MessagesContext>(options =>
 options.UseSqlServer(
 Configuration["Data:KeeysightIdentity:ConnectionString"]));
 
@@ -54,7 +62,12 @@ Configuration["Data:KeeysightIdentity:ConnectionString"]));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddMemoryCache();
             services.AddSession();
+
+            //Dependency Injection with a call to Add signalR
             services.AddSignalR();
+
+            //Add Current User 
+            services.AddHttpContextAccessor();
 
         }
 
@@ -85,6 +98,7 @@ Configuration["Data:KeeysightIdentity:ConnectionString"]));
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
+            // Add SignalR to the middleware pipeline, while setting up the necessary routes
             app.UseSignalR(routes =>
             {
                 routes.MapHub<ChatHub>("/chatHub");
