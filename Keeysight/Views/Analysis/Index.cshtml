@@ -1,0 +1,48 @@
+﻿@model IEnumerable<TestTable>
+
+    @{
+    ViewData["Title"] = "Analysis";
+    }
+    @section Chart{
+        <!--ChartJs Core Javascript and CSS -->
+        <script src="~/lib/chartjs/dist/Chart.bundle.min.js"></script>
+        <link rel="stylesheet" href="~/lib/chartjs/dist/Chart.min.css" />
+
+    }
+
+
+    <h1>Index</h1>
+    <div class="row">
+        <div class="col">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+
+
+    <!--Chart 1-->
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'line',
+
+            // The data for our dataset
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May'],
+                datasets: [{
+                    label: 'My First dataset',
+                    backgroundColor: 'rgb(255, 99, 132)',
+                    borderColor: 'rgb(255, 99, 132)',
+                    data:[15,17,18,19,20]
+                    }]
+            },
+
+            // Configuration options go here
+            options: {
+
+            }
+        });
+    </script>
+
+
+    <script src="~/js/chart.js"></script>

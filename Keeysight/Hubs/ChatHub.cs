@@ -59,6 +59,25 @@ namespace Keeysight.Hubs
             await Clients.All.SendAsync("ReceiveMessage", user, message);
         }
 
+        public async Task SendMessageToGroup(string group, string message)
+        {
+
+            await Clients.Group(group).SendAsync("ReceiveMessage", group, message);
+        }
+
+        //Not working in IIS Express, but working in debug mode
+        //Working in Production Mode
+        //Don't know why
+        public Task JoinGroup(string group)
+        {
+            return Groups.AddToGroupAsync(Context.ConnectionId, group);
+        }
+
+        public Task LeaveGroup(string group)
+        {
+            return Groups.RemoveFromGroupAsync(Context.ConnectionId, group);
+        }
+
 
 
     }

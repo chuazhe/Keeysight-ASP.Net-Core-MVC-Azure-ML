@@ -54,8 +54,9 @@ Configuration["Data:KeeysightIdentity:ConnectionString"]));
 
             services.Configure<CookiePolicyOptions>(options =>
             {
+                //https://stackoverflow.com/questions/49770491/session-variable-value-is-getting-null-in-asp-net-core
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-                options.CheckConsentNeeded = context => true;
+                options.CheckConsentNeeded = context => false;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
@@ -98,9 +99,11 @@ Configuration["Data:KeeysightIdentity:ConnectionString"]));
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
+           
             // Add SignalR to the middleware pipeline, while setting up the necessary routes
             app.UseSignalR(routes =>
             {
+               
                 routes.MapHub<ChatHub>("/chatHub");
             });
         }
