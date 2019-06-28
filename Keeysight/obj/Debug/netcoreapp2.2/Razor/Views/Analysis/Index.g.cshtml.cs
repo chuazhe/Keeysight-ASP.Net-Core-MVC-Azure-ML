@@ -23,8 +23,13 @@ using Keeysight.Models;
 
 #line default
 #line hidden
+#line 3 "C:\Users\User\source\repos\Keeysight\Keeysight\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"038bddbff4577ca765de09f3486fa5ca9201e94e", @"/Views/Analysis/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6dabf9d26d36a0a4c36513b9f46f5e7c7f0b4717", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8158c62552ecafe5b6f29a662769fcb23a5ebaf5", @"/Views/_ViewImports.cshtml")]
     public class Views_Analysis_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<TestTable>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("src", new global::Microsoft.AspNetCore.Html.HtmlString("~/lib/chartjs/dist/Chart.bundle.min.js"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -66,7 +71,7 @@ using Keeysight.Models;
                 WriteLiteral("\r\n    <!--ChartJs Core Javascript and CSS -->\r\n    ");
                 EndContext();
                 BeginContext(143, 62, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "038bddbff4577ca765de09f3486fa5ca9201e94e4689", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "038bddbff4577ca765de09f3486fa5ca9201e94e4842", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -84,7 +89,7 @@ using Keeysight.Models;
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(211, 65, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "038bddbff4577ca765de09f3486fa5ca9201e94e5942", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "038bddbff4577ca765de09f3486fa5ca9201e94e6095", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

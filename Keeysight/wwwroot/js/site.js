@@ -4,6 +4,8 @@ $("#menu-toggle").click(function (e) {
     e.preventDefault();
     $("#wrapper").toggleClass("toggled");
 
+
+
     //Change the icon of the button
     /*
     var icon = $(this).find("svg");

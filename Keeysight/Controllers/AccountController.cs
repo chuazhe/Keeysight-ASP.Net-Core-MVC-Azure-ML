@@ -78,5 +78,11 @@ namespace Keeysight.Controllers
             }
             return View(details);
         }
+
+        [AllowAnonymous]
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
     }
 }

@@ -33,3 +33,5 @@ C:\Users\User\source\repos\Keeysight\Keeysight\obj\Release\netcoreapp2.2\Razor\V
 C:\Users\User\source\repos\Keeysight\Keeysight\obj\Release\netcoreapp2.2\Razor\Views\GraphNChart\Index.g.cshtml.cs
 C:\Users\User\source\repos\Keeysight\Keeysight\obj\Release\netcoreapp2.2\Razor\Views\Home\Error.g.cshtml.cs
 C:\Users\User\source\repos\Keeysight\Keeysight\obj\Release\netcoreapp2.2\Razor\Views\Messages\Index.g.cshtml.cs
+C:\Users\User\source\repos\Keeysight\Keeysight\obj\Release\netcoreapp2.2\Razor\Views\Analysis\Index.g.cshtml.cs
+C:\Users\User\source\repos\Keeysight\Keeysight\obj\Release\netcoreapp2.2\Razor\Views\Shared\_Test.g.cshtml.cs

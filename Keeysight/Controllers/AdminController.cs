@@ -18,7 +18,7 @@ namespace Keeysight.Controllers
         }
 
 
-        [Authorize]
+        //[Authorize]
         public ViewResult Index() => View(userManager.Users);
 
         //Without Authorize, U can get in anonymously
@@ -33,7 +33,7 @@ namespace Keeysight.Controllers
                 AppUser user = new AppUser
                 {
 
-                    UserName = model.Name,
+                    UserName = model.Email,
                     Email = model.Email
                 };
                 IdentityResult result

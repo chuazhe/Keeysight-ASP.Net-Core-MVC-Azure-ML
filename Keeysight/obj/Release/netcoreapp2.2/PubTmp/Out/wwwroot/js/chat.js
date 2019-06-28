@@ -39,6 +39,7 @@ document.getElementById("sendButton").addEventListener("click", function (event)
     });
     //If this method is called, the default action of the event will not be triggered.
     event.preventDefault();
+
 });
 
 //send Message

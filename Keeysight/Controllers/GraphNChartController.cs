@@ -3,6 +3,10 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using Syncfusion.Pdf;
+using Syncfusion.Pdf.Graphics;
+using System.IO;
+using Syncfusion.Drawing;
 using System.Threading.Tasks;
 
 namespace Keeysight.Controllers
@@ -19,8 +23,9 @@ namespace Keeysight.Controllers
             this._context = context;
         }
         */
-        
 
+
+        //[Authorize(Roles = "Admin")]
         [Authorize]
         public IActionResult Index()
         {
@@ -117,6 +122,43 @@ namespace Keeysight.Controllers
                 return RedirectToAction("Error", "Home");
 
             }
+        }
+
+
+        [HttpGet]
+        public ActionResult CreateDocument()
+        {
+
+            //Create a new PDF document
+            PdfDocument document = new PdfDocument();
+
+            //Add a page to the document
+            PdfPage page = document.Pages.Add();
+
+            //Create PDF graphics for the page
+            PdfGraphics graphics = page.Graphics;
+
+            //Set the standard font
+            PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 20);
+
+            //Draw the text
+            graphics.DrawString("Hello World!!!", font, PdfBrushes.Black, new PointF(0, 0));
+
+            //Saving the PDF to the MemoryStream
+            MemoryStream stream = new MemoryStream();
+
+            document.Save(stream);
+
+            //If the position is not set to '0' then the PDF will be empty.
+            stream.Position = 0;
+
+            Console.WriteLine("LALA");
+
+            //Download the PDF document in the browser.
+            FileStreamResult fileStreamResult = new FileStreamResult(stream, "application/pdf");
+            fileStreamResult.FileDownloadName = "Output.pdf";
+            return fileStreamResult;
+
         }
     }
 }
