@@ -7,7 +7,11 @@
     <!--ChartJs Core Javascript and CSS -->
     <script src="~/lib/chartjs/dist/Chart.bundle.min.js"></script>
     <link rel="stylesheet" href="~/lib/chartjs/dist/Chart.min.css" />
+
 }
+
+
+
 
 <h1>Index</h1>
 <div class="row">
@@ -19,9 +23,35 @@
     </div>
 
 </div>
-<div class="row">
-    <div class="container">
 
+
+<div class="row">
+    <div class="col">
+        <div class="form-group">
+            Label
+            <input type="text" id="Label" />
+        </div>
+        <div class="form-group">
+            Value <input type="text" id="Value" />
+        </div>
+        <input type="button" value="push" onclick="addData()">
+    </div>
+    <div class="col">
+        <input type="button" value="Pop" onclick="removeData()">
+    </div>
+    <div class="col">
+        <input type="button" value="remove first one" onclick="removeFirstOne()">
+    </div>
+    <div class="col">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <button class="dropdown-item" type="button" onclick="changeToLine()">Line</button>
+                <button class="dropdown-item" type="button" onclick="changeToBar()">Bar</button>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -54,6 +84,14 @@
             </div>
             <button type="submit" class="btn btn-primary">Update</button>
         </form>
+        @{Html.BeginForm("CreateDocument", "GraphNChart", FormMethod.Get);
+            {
+                <div>
+                    <input type="submit" value="Create Document" style="width:150px;height:27px" />
+                </div>
+            }
+            Html.EndForm();
+        }
     </div>
 </div>
 
@@ -88,31 +126,52 @@
         },
 
         // Configuration options go here
-        options: {}
-    });
+        options: {
 
-    $(document).ready(function () { console.log("graph and chart loh"); });
+        }
+    });
 </script>
 
 <!--Chart 2-->
 <script>
-    var ctx = document.getElementById('myChart2').getContext('2d');
-    var chart = new Chart(ctx, {
-        // The type of chart we want to create
-        type: 'line',
-
-        // The data for our dataset
+    var ctx = document.getElementById('myChart2');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
         data: {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
             datasets: [{
-                label: 'My First dataset',
-                backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
-                data: [0, 10, 5, 2, 20, 30, 45]
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
             }]
         },
-
-        // Configuration options go here
-        options: {}
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
     });
+
 </script>
+
+<script src="~/js/chart.js"></script>

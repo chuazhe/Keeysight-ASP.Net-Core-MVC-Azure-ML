@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "407d21e704cb71deb3bb3b7abdba3139c1932bac"
+    "signature": "dd2163b68ed70f92973d4053fcd89eb0eabc5567"
   },
   "compilationOptions": {
     "defines": [
@@ -26,10 +26,12 @@
         "dependencies": {
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
+          "Microsoft.AspNetCore.SignalR": "1.1.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.2.4",
           "Microsoft.EntityFrameworkCore.Tools": "2.2.4",
           "Microsoft.NETCore.App": "2.2.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.2.3"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.2.3",
+          "Syncfusion.Pdf.Net.Core": "17.1.0.53"
         },
         "runtime": {
           "Keeysight.dll": {}
@@ -313,6 +315,48 @@
         },
         "compile": {
           "lib/netstandard1.0/Remotion.Linq.dll": {}
+        }
+      },
+      "Syncfusion.Compression.Net.Core/17.1.0.53": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Syncfusion.Compression.Portable.dll": {
+            "assemblyVersion": "17.1200.0.53",
+            "fileVersion": "17.1200.0.53"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Syncfusion.Compression.Portable.dll": {}
+        }
+      },
+      "Syncfusion.Licensing/17.1.0.53": {
+        "runtime": {
+          "lib/netstandard2.0/Syncfusion.Licensing.dll": {
+            "assemblyVersion": "17.1.0.53",
+            "fileVersion": "17.1.0.53"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Pdf.Net.Core/17.1.0.53": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3",
+          "Syncfusion.Compression.Net.Core": "17.1.0.53",
+          "Syncfusion.Licensing": "17.1.0.53",
+          "System.Text.Encoding.CodePages": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Syncfusion.Pdf.Portable.dll": {
+            "assemblyVersion": "17.1200.0.53",
+            "fileVersion": "17.1200.0.53"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Syncfusion.Pdf.Portable.dll": {}
         }
       },
       "System.Collections.Immutable/1.5.0": {},
@@ -3391,6 +3435,9 @@
           "Microsoft.NETCore.Platforms": "2.2.0",
           "System.Runtime.CompilerServices.Unsafe": "4.5.1"
         },
+        "compile": {
+          "ref/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
+        },
         "compileOnly": true
       },
       "System.Text.Encoding.Extensions/4.3.0": {
@@ -3707,6 +3754,27 @@
       "sha512": "sha512-fK/76UmpC0FXBlGDFVPLJHQlDLYnGC+XY3eoDgCgbtrhi0vzbXDQ3n/IYHhqSKqXQfGw/u04A1drWs7rFVkRjw==",
       "path": "remotion.linq/2.2.0",
       "hashPath": "remotion.linq.2.2.0.nupkg.sha512"
+    },
+    "Syncfusion.Compression.Net.Core/17.1.0.53": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QfL1+EEDzfKOLK3F2MjL3NUh0AVmIxOKg2KOf6AYMwUYNGunfyTkm7RS3JoRCbBHAHo0sgU7vaUu86jfVnrc2w==",
+      "path": "syncfusion.compression.net.core/17.1.0.53",
+      "hashPath": "syncfusion.compression.net.core.17.1.0.53.nupkg.sha512"
+    },
+    "Syncfusion.Licensing/17.1.0.53": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7S0bWG7iG3Z19cTAtFQvuYNE/6foBSEkh9Ye5D7mAvEXp7y2943DXVwmq3CfyWGO1b1ien+DgEKf72vWZB/59w==",
+      "path": "syncfusion.licensing/17.1.0.53",
+      "hashPath": "syncfusion.licensing.17.1.0.53.nupkg.sha512"
+    },
+    "Syncfusion.Pdf.Net.Core/17.1.0.53": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KCGgdwbq10FwotXe27OaPCB7lLI0yLLVo/n/tkFCLq21rM5Fs8ZvGXphoghDKTnGNJn+hjzlpn4rRoZe2sX53Q==",
+      "path": "syncfusion.pdf.net.core/17.1.0.53",
+      "hashPath": "syncfusion.pdf.net.core.17.1.0.53.nupkg.sha512"
     },
     "System.Collections.Immutable/1.5.0": {
       "type": "package",

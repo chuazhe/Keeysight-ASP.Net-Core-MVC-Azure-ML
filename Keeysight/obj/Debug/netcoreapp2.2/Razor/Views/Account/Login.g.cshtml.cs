@@ -23,8 +23,13 @@ using Keeysight.Models;
 
 #line default
 #line hidden
+#line 3 "C:\Users\User\source\repos\Keeysight\Keeysight\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b69f8d9a960c7b845742b6e04dd350cb3df56658", @"/Views/Account/Login.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6dabf9d26d36a0a4c36513b9f46f5e7c7f0b4717", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8158c62552ecafe5b6f29a662769fcb23a5ebaf5", @"/Views/_ViewImports.cshtml")]
     public class Views_Account_Login : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<LoginModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("rel", new global::Microsoft.AspNetCore.Html.HtmlString("stylesheet"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -89,17 +94,17 @@ using Keeysight.Models;
             WriteLiteral("\r\n    <!--e /Account/Login URL, which is the default URL for providing authentication\r\n    credentials. If want to change the default login url, search for CHANGING THE LOGIN URL on page 932-->\r\n    ");
             EndContext();
             BeginContext(247, 1120, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b69f8d9a960c7b845742b6e04dd350cb3df5665811227", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b69f8d9a960c7b845742b6e04dd350cb3df5665811380", async() => {
                 BeginContext(253, 207, true);
                 WriteLiteral("\r\n        <meta charset=\"utf-8\" />\r\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n        <title>Login - Keeysight</title>\r\n\r\n        <!--If it is development-->\r\n        ");
                 EndContext();
                 BeginContext(460, 144, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b69f8d9a960c7b845742b6e04dd350cb3df5665811833", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b69f8d9a960c7b845742b6e04dd350cb3df5665811986", async() => {
                     BeginContext(495, 14, true);
                     WriteLiteral("\r\n            ");
                     EndContext();
                     BeginContext(509, 71, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "b69f8d9a960c7b845742b6e04dd350cb3df5665812255", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "b69f8d9a960c7b845742b6e04dd350cb3df5665812408", async() => {
                     }
                     );
                     __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -135,12 +140,12 @@ using Keeysight.Models;
                 WriteLiteral("\r\n        <!--If it is not development-->\r\n        ");
                 EndContext();
                 BeginContext(655, 642, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b69f8d9a960c7b845742b6e04dd350cb3df5665814800", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b69f8d9a960c7b845742b6e04dd350cb3df5665814953", async() => {
                     BeginContext(690, 124, true);
                     WriteLiteral("\r\n            <!--fallback is The URL of a CSS stylesheet to fallback to in the case the primary one fails.-->\r\n            ");
                     EndContext();
                     BeginContext(814, 459, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "b69f8d9a960c7b845742b6e04dd350cb3df5665815336", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "b69f8d9a960c7b845742b6e04dd350cb3df5665815489", async() => {
                     }
                     );
                     __Microsoft_AspNetCore_Mvc_TagHelpers_LinkTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.LinkTagHelper>();
@@ -187,7 +192,7 @@ using Keeysight.Models;
                 WriteLiteral("\r\n        ");
                 EndContext();
                 BeginContext(1307, 47, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "b69f8d9a960c7b845742b6e04dd350cb3df5665819008", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "b69f8d9a960c7b845742b6e04dd350cb3df5665819161", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -221,7 +226,7 @@ using Keeysight.Models;
             WriteLiteral("\r\n    ");
             EndContext();
             BeginContext(1373, 1417, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b69f8d9a960c7b845742b6e04dd350cb3df5665821150", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b69f8d9a960c7b845742b6e04dd350cb3df5665821303", async() => {
                 BeginContext(1393, 312, true);
                 WriteLiteral(@"
         <div class=""container login-form border border-primary rounded"">
@@ -235,7 +240,7 @@ using Keeysight.Models;
                     ");
                 EndContext();
                 BeginContext(1705, 765, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b69f8d9a960c7b845742b6e04dd350cb3df5665821856", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b69f8d9a960c7b845742b6e04dd350cb3df5665822009", async() => {
                     BeginContext(1744, 207, true);
                     WriteLiteral("\r\n                        <!-- hidden type let web developers include data that cannot be seen or modified by users when a form is submitted.-->\r\n                        <input type=\"hidden\" name=\"returnUrl\"");
                     EndContext();
@@ -250,7 +255,7 @@ WriteAttributeValue("", 1959, ViewBag.returnUrl, 1959, 18, false);
                     WriteLiteral(" />\r\n                        <div class=\"form-group\">\r\n                            ");
                     EndContext();
                     BeginContext(2061, 66, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "b69f8d9a960c7b845742b6e04dd350cb3df5665822999", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "b69f8d9a960c7b845742b6e04dd350cb3df5665823152", async() => {
                     }
                     );
                     __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -275,7 +280,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                     WriteLiteral("\r\n                        </div>\r\n                        <div class=\"form-group\">\r\n                            ");
                     EndContext();
                     BeginContext(2239, 72, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "b69f8d9a960c7b845742b6e04dd350cb3df5665824970", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "b69f8d9a960c7b845742b6e04dd350cb3df5665825123", async() => {
                     }
                     );
                     __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -321,7 +326,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 WriteLiteral("\r\n                </div>\r\n            </div>\r\n            <div class=\"row\">\r\n                ");
                 EndContext();
                 BeginContext(2563, 64, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b69f8d9a960c7b845742b6e04dd350cb3df5665828639", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b69f8d9a960c7b845742b6e04dd350cb3df5665828792", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationSummaryTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationSummaryTagHelper>();

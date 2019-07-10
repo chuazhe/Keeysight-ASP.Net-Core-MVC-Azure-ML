@@ -48,14 +48,23 @@ options.UseSqlServer(
 Configuration["Data:KeeysightIdentity:ConnectionString"]));
 
             //used the AddIdentity method to set up the Identity services using the built-in classes to represent users and roles.
-            services.AddIdentity<AppUser, IdentityRole>()
+            services.AddIdentity<AppUser, IdentityRole>(opts => {
+                opts.User.RequireUniqueEmail = true;
+                //opts.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyz";
+                //opts.Password.RequiredLength = 6;
+                opts.Password.RequireNonAlphanumeric = false;
+                opts.Password.RequireLowercase = false;
+                opts.Password.RequireUppercase = false;
+                opts.Password.RequireDigit = false;
+            })
             .AddEntityFrameworkStores<AppIdentityDbContext>()
             .AddDefaultTokenProviders();
 
             services.Configure<CookiePolicyOptions>(options =>
             {
+                //https://stackoverflow.com/questions/49770491/session-variable-value-is-getting-null-in-asp-net-core
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-                options.CheckConsentNeeded = context => true;
+                options.CheckConsentNeeded = context => false;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
@@ -98,9 +107,13 @@ Configuration["Data:KeeysightIdentity:ConnectionString"]));
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTE0ODA3QDMxMzcyZTMxMmUzMFBPaWM0MjM5WDN5Y1N2WlNQZDh5MEFmQ2pTaldBTUVGZkJRQjZaSjMyNHc9; MTE0ODA4QDMxMzcyZTMxMmUzMEI4VTFmVk1veXJhZ2U4cHJodENNVXFoZTBxdU1ST3RlMEFSZ3llek5qM1E9; MTE0ODA5QDMxMzcyZTMxMmUzMFVCSWM5bFZhczNJaFlteGUyK2ljYk1XbGp5VXZNQnlnWDQrTlh4NWhpK3c9; MTE0ODEwQDMxMzcyZTMxMmUzMGc1eFV3ZjRmSlZFbXV4UHVtZWZya25GTHY3dEJpTzdQQ3VXeWZCRmg2Slk9; MTE0ODExQDMxMzcyZTMxMmUzMG81ckMxTWhSL2EzOGtnQzVKaEZFQUF3eTZaM0pJRFYxQ3UzdEd0bXdGbGM9; MTE0ODEyQDMxMzcyZTMxMmUzMGhVeVZBRjU4Z21hTkVsN05TM1krd0g2REdPdXBtMUxkZVI1N2JRUS9iWkE9; MTE0ODEzQDMxMzcyZTMxMmUzMG5XeTJpU1g2MlUwNVZtWjFkYTJhYmpWMThyU0xYbWxPYnFDdDlvTXBCOWM9; MTE0ODE0QDMxMzcyZTMxMmUzMFdkalV5TnRiMUlTOFJtNW9sNFlqTFBla2FvVWF3eXdxcWZOY2UydWxORmM9; MTE0ODE1QDMxMzcyZTMxMmUzMFVVRDdJVkU5V2twSjl5SWh3NEV4ZmlmUTBsRWNrazBNSFRNUjR3QU9HMms9; MTE0ODE2QDMxMzcyZTMxMmUzMG81ckMxTWhSL2EzOGtnQzVKaEZFQUF3eTZaM0pJRFYxQ3UzdEd0bXdGbGM9");
+
+
             // Add SignalR to the middleware pipeline, while setting up the necessary routes
             app.UseSignalR(routes =>
             {
+               
                 routes.MapHub<ChatHub>("/chatHub");
             });
         }

@@ -1,0 +1,78 @@
+﻿@model IEnumerable<TestTable>
+
+@{
+    ViewData["Title"] = "Analysis";
+}
+@section Chart{
+    <!--ChartJs Core Javascript and CSS -->
+    <script src="~/lib/chartjs/dist/Chart.bundle.min.js"></script>
+    <link rel="stylesheet" href="~/lib/chartjs/dist/Chart.min.css" />
+
+}
+
+
+<h1>Index</h1>
+<div class="row">
+    <div class="col">
+        <canvas id="myChart"></canvas>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        //Call HTTPPOST GetAll method in Analysis
+        $.getJSON("Analysis/GetAll",
+            function (json) {
+                // json is already an JSON object
+                console.log(json);
+                console.log(json[0].id);
+
+                //Push id into the array
+                var result = [];
+                for (var i in json) {
+                    result.push(json[i].id);
+                }
+
+                //Send the data to the chart
+                renderChart(result);
+
+            })
+
+
+    });
+
+</script>
+
+<!--Chart 1-->
+<script>
+    function renderChart(data2) {
+
+        console.log(data2);
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'line',
+
+            // The data for our dataset
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May'],
+                datasets: [{
+                    label: 'My First dataset',
+                    backgroundColor: 'rgb(255, 99, 132)',
+                    borderColor: 'rgb(255, 99, 132)',
+                    //Use the sent data
+                    data: data2
+                }]
+            },
+
+            // Configuration options go here
+            options: {
+
+            }
+        });
+    }
+</script>
+
+
+
